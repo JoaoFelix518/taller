@@ -1,6 +1,6 @@
 ## Parte Teórica
 
-### Investigar qué es Markdown
+## qué es Markdown
 
 **Markdown** es un lenguaje de marcado ligero creado por John Gruber y Aaron Swartz en 2004. Su objetivo principal es permitir la escritura de texto con formato (títulos, negritas, listas, enlaces, bloques de código, etc.) de manera sencilla, legible y estructurada, utilizando caracteres de texto plano. Es ampliamente utilizado en plataformas como GitHub para la creación de archivos de documentación (`README.md`), páginas web estáticas, documentación técnica y notas.
 
@@ -8,14 +8,14 @@
 
 ## GIT
 
-### 1. ¿Qué es un repositorio en Git y cómo se diferencia de un proyecto "normal"?
+## 1. ¿Qué es un repositorio en Git y cómo se diferencia de un proyecto "normal"?
 Un **repositorio en Git** es un contenedor o estructura de almacenamiento donde Git guarda todos los archivos de un proyecto junto con el historial completo de cambios, versiones, ramas (*branches*), metadatos y registros de confirmaciones (*commits*). 
 
 * **Diferencia con un proyecto "normal":** Un proyecto normal es simplemente una carpeta local con archivos en su estado actual. Un repositorio de Git incluye una carpeta oculta llamada `.git`, la cual actúa como una base de datos que rastrea la evolución del código a lo largo del tiempo, permitiendo revertir cambios, trabajar en paralelo y colaborar sin sobrescribir el trabajo de otros.
 
 ---
 
-### 2. ¿Cuáles son las tres áreas principales de Git (working directory, staging area/index y repository) y qué papel cumple cada una?
+## 2. ¿Cuáles son las tres áreas principales de Git (working directory, staging area/index y repository) y qué papel cumple cada una?
 
 1. **Working Directory (Directorio de Trabajo):** Es el espacio local donde te encuentras trabajando actualmente. Contiene los archivos extraídos del repositorio para que los edites, agregues o elimines. Los cambios en esta área aún no están registrados en el historial de Git.
 2. **Staging Area / Index (Área de Preparación):** Es una zona intermedia de paso (*borrador*). Aquí se colocan los archivos modificados que han sido seleccionados mediante el comando `git add`. Permite agrupar de forma organizada únicamente los cambios que deseas incluir en el próximo *commit*.
@@ -23,7 +23,7 @@ Un **repositorio en Git** es un contenedor o estructura de almacenamiento donde 
 
 ---
 
-### 3. ¿Cómo representa Git los cambios internamente? (objetos blob, tree, commit y tag)
+## 3. ¿Cómo representa Git los cambios internamente? (objetos blob, tree, commit y tag)
 
 Git es un sistema de archivos orientados a objetos en forma de grafo dirigido acíclico (DAG). Modela los datos mediante cuatro objetos fundamentales:
 
@@ -34,7 +34,7 @@ Git es un sistema de archivos orientados a objetos en forma de grafo dirigido ac
 
 ---
 
-### 4. ¿Cómo se crea un commit y qué información almacena un objeto commit?
+## 4. ¿Cómo se crea un commit y qué información almacena un objeto commit?
 
 Un *commit* se crea cuando se ejecutan los siguientes pasos:
 1. Se modifican archivos en el *Working Directory*.
@@ -50,14 +50,14 @@ Un *commit* se crea cuando se ejecutan los siguientes pasos:
 
 ---
 
-### 5. ¿Cuál es la diferencia entre `git pull` y `git fetch`?
+## 5. ¿Cuál es la diferencia entre `git pull` y `git fetch`?
 
 * **`git fetch`:** Descarga las novedades, ramas y referencias desde el repositorio remoto hacia el repositorio local, pero **no modifica ni combina** nada en tu directorio de trabajo actual. Te permite revisar qué cambios existen antes de unirlos.
 * **`git pull`:** Realiza una descarga de los cambios remotos y **los combina automáticamente** en la rama actual. En términos prácticos, `git pull` es la combinación de ejecutar `git fetch` seguido de `git merge`.
 
 ---
 
-### 6. ¿Qué es un branch (rama) en Git y cómo Git gestiona los punteros a commits?
+## 6. ¿Qué es un branch (rama) en Git y cómo Git gestiona los punteros a commits?
 
 Un **branch (rama)** en Git no es una copia de la carpeta del proyecto, sino simplemente un **puntero móvil y ligero** que apunta a un *commit* específico dentro del historial de desarrollo. 
 
@@ -67,7 +67,7 @@ Un **branch (rama)** en Git no es una copia de la carpeta del proyecto, sino sim
 
 ---
 
-### 7. ¿Cómo se realiza un merge y qué conflictos pueden surgir? ¿Cómo se resuelven?
+## 7. ¿Cómo se realiza un merge y qué conflictos pueden surgir? ¿Cómo se resuelven?
 
 Un **merge** integra los cambios de una rama origen en la rama de destino actual mediante el comando `git merge <nombre-rama>`.
 
@@ -80,7 +80,7 @@ Un **merge** integra los cambios de una rama origen en la rama de destino actual
 
 ---
 
-### 8. ¿Cómo funciona el área de staging (`git add`) y qué pasa si omito este paso?
+## 8. ¿Cómo funciona el área de staging (`git add`) y qué pasa si omito este paso?
 
 El **área de staging** sirve como una capa de preparación donde se seleccionan y organizan los cambios exactos que formarán parte de la siguiente foto del proyecto. Al ejecutar `git add`, Git calcula el hash del contenido modificado, crea los objetos *blob* necesarios en la carpeta `.git` y actualiza el índice.
 
@@ -88,7 +88,7 @@ El **área de staging** sirve como una capa de preparación donde se seleccionan
 
 ---
 
-### 9. ¿Qué es el archivo `.gitignore` y cómo influye en el seguimiento de archivos?
+## 9. ¿Qué es el archivo `.gitignore` y cómo influye en el seguimiento de archivos?
 
 El archivo `.gitignore` es un archivo de texto plano ubicado en el proyecto que especifica patrones de nombres de archivos, directorios y extensiones que Git debe **ignorar deliberadamente**.
 
@@ -96,14 +96,14 @@ El archivo `.gitignore` es un archivo de texto plano ubicado en el proyecto que 
 
 ---
 
-### 10. ¿Cuál es la diferencia entre un "commit amend" (`--amend`) y un nuevo commit?
+## 10. ¿Cuál es la diferencia entre un "commit amend" (`--amend`) y un nuevo commit?
 
 * **`git commit --amend`:** Modifica o reemplaza el **último commit** realizado. Permite agregar archivos olvidados al *staging* o corregir el mensaje del último commit. No crea un commit adicional, sino que genera un objeto *commit* totalmente nuevo con el mismo padre y actualiza la referencia.
 * **Nuevo Commit:** Crea una confirmación independiente registrada cronológicamente después de la anterior, aumentando la longitud del historial de commits.
 
 ---
 
-### 11. ¿Cómo se utiliza `git stash` y en qué escenarios es útil?
+## 11. ¿Cómo se utiliza `git stash` y en qué escenarios es útil?
 
 `git stash` almacena temporalmente los cambios modificados en el *working directory* y *staging area* en una pila (*stack*) interna de almacenamiento, dejando el directorio de trabajo limpio y en el estado del último *commit*.
 
@@ -115,7 +115,7 @@ El archivo `.gitignore` es un archivo de texto plano ubicado en el proyecto que 
 
 ---
 
-### 12. ¿Qué mecanismos ofrece Git para deshacer cambios? (por ejemplo, `git reset`, `git revert`, `git checkout`)
+## 12. ¿Qué mecanismos ofrece Git para deshacer cambios? (por ejemplo, `git reset`, `git revert`, `git checkout`)
 
 * **`git checkout`:** Utilizado históricamente para descartar cambios no guardados en el *working directory* (`git checkout -- <archivo>`) o para moverse entre ramas/commits sin alterar el historial.
 * **`git reset`:** Mueve el puntero de la rama a un *commit* anterior. Puede actuar de tres formas:
@@ -126,7 +126,7 @@ El archivo `.gitignore` es un archivo de texto plano ubicado en el proyecto que 
 
 ---
 
-### 13. ¿Cómo funciona la configuración de remotos (origin, upstream) y qué comandos uso para gestión de forks?
+## 13. ¿Cómo funciona la configuración de remotos (origin, upstream) y qué comandos uso para gestión de forks?
 
 * **`origin`:** Es el alias por defecto que Git le asigna al repositorio remoto principal del cual clonaste tu proyecto local.
 * **`upstream`:** Es un alias secundario convención para referenciar al repositorio original central cuando trabajas desde una copia personal (*fork*).
@@ -139,7 +139,7 @@ El archivo `.gitignore` es un archivo de texto plano ubicado en el proyecto que 
 
 ---
 
-### 14. ¿Cómo puedo inspeccionar el historial de commits? (por ejemplo, `git log`, `git diff`, `git show`)
+## 14. ¿Cómo puedo inspeccionar el historial de commits? (por ejemplo, `git log`, `git diff`, `git show`)
 
 * **`git log`:** Muestra la lista cronológica de los *commits* realizados en la rama actual (incluye hashes, autores, fechas y mensajes).
 * **`git diff`:** Muestra las diferencias línea por línea entre distintas áreas (entre *working directory* y *staging*, entre *commits*, o entre ramas).
@@ -151,7 +151,7 @@ El archivo `.gitignore` es un archivo de texto plano ubicado en el proyecto que 
 
 ---
 
-### 15. ¿Cuáles son los tipos de datos primitivos en Java?
+## 15. ¿Cuáles son los tipos de datos primitivos en Java?
 
 Java posee **8 tipos de datos primitivos** clasificados en 4 categorías:
 
@@ -170,7 +170,7 @@ Java posee **8 tipos de datos primitivos** clasificados en 4 categorías:
 
 ---
 
-### 16. ¿Cómo funcionan las estructuras de control de flujo como `if`, `else`, `switch` y bucles en Java?
+## 16. ¿Cómo funcionan las estructuras de control de flujo como `if`, `else`, `switch` y bucles en Java?
 
 Las estructuras de control determinan el orden de ejecución de las instrucciones de un programa:
 
@@ -184,7 +184,7 @@ Las estructuras de control determinan el orden de ejecución de las instruccione
 
 ---
 
-### 17. ¿Por qué es importante usar nombres significativos para variables y métodos?
+## 17. ¿Por qué es importante usar nombres significativos para variables y métodos?
 
 Es fundamental por los siguientes aspectos técnicos y de ingeniería de software:
 * **Mantenibilidad y Legibilidad:** Permite que cualquier desarrollador (o tú mismo en el futuro) entienda rápidamente qué almacena una variable o qué función cumple un método sin requerir comentarios excesivos.
@@ -193,13 +193,13 @@ Es fundamental por los siguientes aspectos técnicos y de ingeniería de softwar
 
 ---
 
-### 18. ¿Qué es la Programación Orientada a Objetos (POO)?
+## 18. ¿Qué es la Programación Orientada a Objetos (POO)?
 
 La **Programación Orientada a Objetos (POO)** es un paradigma de programación estructurado en torno a **"objetos"** en lugar de funciones o lógica secuencial. Un objeto combina **estado** (atributos/datos) y **comportamiento** (métodos/funciones), modelando entidades del mundo real o conceptos abstractos para construir aplicaciones modulares, reutilizables y escalables.
 
 ---
 
-### 19. ¿Cuáles son los cuatro pilares de la Programación Orientada a Objetos?
+## 19. ¿Cuáles son los cuatro pilares de la Programación Orientada a Objetos?
 
 1. **Encapsulamiento:** Oculta los detalles internos del estado de un objeto y restringe el acceso directo desde el exterior, exponiendo solo interfaces seguras (métodos *getters* y *setters*).
 2. **Abstracción:** Oculta la complejidad de la implementación y muestra únicamente las características esenciales necesarias para interactuar con la entidad.
@@ -208,7 +208,7 @@ La **Programación Orientada a Objetos (POO)** es un paradigma de programación 
 
 ---
 
-### 20. ¿Qué es la herencia en POO y cómo se utiliza en Java?
+## 20. ¿Qué es la herencia en POO y cómo se utiliza en Java?
 
 La **herencia** es el mecanismo mediante el cual una clase deriva de otra, heredando sus atributos y métodos no privados.
 
@@ -227,8 +227,9 @@ class Perro extends Animal {
     void hacerSonido() {
         System.out.println("Guau guau");
     }
-
-    ### 21. ¿Qué son los modificadores de acceso y cuáles son los más comunes en Java?
+    
+```
+## 21. ¿Qué son los modificadores de acceso y cuáles son los más comunes en Java?
 
 Los **modificadores de acceso** son palabras clave que definen el alcance, visibilidad o nivel de protección de clases, variables, métodos y constructores.
 
@@ -240,7 +241,7 @@ Los **modificadores de acceso** son palabras clave que definen el alcance, visib
 
 ---
 
-### 22. ¿Qué es una variable de entorno y por qué son importantes para Java o la programación en general?
+## 22. ¿Qué es una variable de entorno y por qué son importantes para Java o la programación en general?
 
 Una **variable de entorno** es un valor dinámico guardado a nivel del sistema operativo que influye en el comportamiento de los procesos y programas en ejecución.
 
@@ -248,4 +249,3 @@ Una **variable de entorno** es un valor dinámico guardado a nivel del sistema o
   * **Configuración del Entorno (`JAVA_HOME` y `PATH`):** Permite al sistema y a las herramientas de desarrollo (como VS Code, Maven, Gradle) localizar la instalación del JDK y ejecutar binarios de Java desde cualquier directorio de la terminal.
   * **Seguridad:** Permite separar credenciales sensibles (claves de API, contraseñas de bases de datos) del código fuente.
   * **Portabilidad:** Permite ejecutar la misma aplicación en diferentes entornos (Desarrollo, Pruebas, Producción) simplemente cambiando los valores de entorno sin modificar el código.
-}
