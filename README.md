@@ -227,4 +227,25 @@ class Perro extends Animal {
     void hacerSonido() {
         System.out.println("Guau guau");
     }
+
+    ### 21. ¿Qué son los modificadores de acceso y cuáles son los más comunes en Java?
+
+Los **modificadores de acceso** son palabras clave que definen el alcance, visibilidad o nivel de protección de clases, variables, métodos y constructores.
+
+**Los más comunes en Java:**
+1. **`private`:** Accesible únicamente dentro de la misma clase donde fue declarado (máximo nivel de encapsulamiento).
+2. **`default` (paquete / sin palabra clave):** Accesible solo dentro de las clases pertenecientes al mismo paquete.
+3. **`protected`:** Accesible en el mismo paquete y en subclases derivadas, incluso si están en otros paquetes.
+4. **`public`:** Accesible desde cualquier clase en cualquier paquete del proyecto.
+
+---
+
+### 22. ¿Qué es una variable de entorno y por qué son importantes para Java o la programación en general?
+
+Una **variable de entorno** es un valor dinámico guardado a nivel del sistema operativo que influye en el comportamiento de los procesos y programas en ejecución.
+
+* **Importancia en Java y Programación:**
+  * **Configuración del Entorno (`JAVA_HOME` y `PATH`):** Permite al sistema y a las herramientas de desarrollo (como VS Code, Maven, Gradle) localizar la instalación del JDK y ejecutar binarios de Java desde cualquier directorio de la terminal.
+  * **Seguridad:** Permite separar credenciales sensibles (claves de API, contraseñas de bases de datos) del código fuente.
+  * **Portabilidad:** Permite ejecutar la misma aplicación en diferentes entornos (Desarrollo, Pruebas, Producción) simplemente cambiando los valores de entorno sin modificar el código.
 }
