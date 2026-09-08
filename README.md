@@ -249,3 +249,107 @@ Una **variable de entorno** es un valor dinámico guardado a nivel del sistema o
   * **Configuración del Entorno (`JAVA_HOME` y `PATH`):** Permite al sistema y a las herramientas de desarrollo (como VS Code, Maven, Gradle) localizar la instalación del JDK y ejecutar binarios de Java desde cualquier directorio de la terminal.
   * **Seguridad:** Permite separar credenciales sensibles (claves de API, contraseñas de bases de datos) del código fuente.
   * **Portabilidad:** Permite ejecutar la misma aplicación en diferentes entornos (Desarrollo, Pruebas, Producción) simplemente cambiando los valores de entorno sin modificar el código.
+
+  ---
+
+## Parte Práctica
+
+### 1. Calculadora Básica (Suma, Resta, Multiplicación y División)
+
+```java
+import java.util.Scanner;
+
+public class Calculadora {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("=== CALCULADORA BÁSICA ===");
+        System.out.print("Ingrese el primer número: ");
+        double num1 = scanner.nextDouble();
+
+        System.out.print("Ingrese el segundo número: ");
+        double num2 = scanner.nextDouble();
+
+        System.out.println("\nSeleccione la operación:");
+        System.out.println("1. Suma (+)");
+        System.out.println("2. Resta (-)");
+        System.out.println("3. Multiplicación (*)");
+        System.out.println("4. División (/)");
+        System.out.print("Opción: ");
+        int opcion = scanner.nextInt();
+
+        switch (opcion) {
+            case 1:
+                System.out.println("Resultado: " + (num1 + num2));
+                break;
+            case 2:
+                System.out.println("Resultado: " + (num1 - num2));
+                break;
+            case 3:
+                System.out.println("Resultado: " + (num1 * num2));
+                break;
+            case 4:
+                if (num2 != 0) {
+                    System.out.println("Resultado: " + (num1 / num2));
+                } else {
+                    System.out.println("Error: No se puede dividir entre cero.");
+                }
+                break;
+            default:
+                System.out.println("Opción no válida.");
+                break;
+        }
+
+        scanner.close();
+    }
+}
+
+import java.util.Scanner;
+
+public class ContadorVocalesConsonantes {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Ingrese una palabra (en minúsculas y sin acentos): ");
+        String palabra = scanner.nextLine();
+
+        int vocales = 0;
+        int consonantes = 0;
+
+        for (int i = 0; i < palabra.length(); i++) {
+            char letra = palabra.charAt(i);
+
+            if (letra == 'a' || letra == 'e' || letra == 'i' || letra == 'o' || letra == 'u') {
+                vocales++;
+            } else if (letra >= 'a' && letra <= 'z') {
+                consonantes++;
+            }
+        }
+
+        System.out.println("Número de vocales: " + vocales);
+        System.out.println("Número de consonantes: " + consonantes);
+
+        scanner.close();
+    }
+}
+
+import java.util.Scanner;
+
+public class InvertirCadena {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Ingrese una cadena de texto: ");
+        String texto = scanner.nextLine();
+
+        String textoInvertido = "";
+
+        for (int i = texto.length() - 1; i >= 0; i--) {
+            textoInvertido += texto.charAt(i);
+        }
+
+        System.out.println("Texto invertido: " + textoInvertido);
+
+        scanner.close();
+    }
+}
