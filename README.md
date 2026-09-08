@@ -254,7 +254,7 @@ Una **variable de entorno** es un valor dinámico guardado a nivel del sistema o
 
 ## Parte Práctica
 
-### 1. Calculadora Básica (Suma, Resta, Multiplicación y División)
+## 1. Calculadora Básica (Suma, Resta, Multiplicación y División)
 
 ```java
 import java.util.Scanner;
