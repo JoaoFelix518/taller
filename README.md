@@ -304,6 +304,10 @@ public class Calculadora {
     }
 }
 
+```
+## 2. Contador de Vocales y Consonantes
+
+```java
 import java.util.Scanner;
 
 public class ContadorVocalesConsonantes {
@@ -333,6 +337,10 @@ public class ContadorVocalesConsonantes {
     }
 }
 
+```
+## 3. Invertir una Cadena de Texto
+
+```java
 import java.util.Scanner;
 
 public class InvertirCadena {
